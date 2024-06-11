@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <title>조선중앙텔레비죤 실시간 방송</title>
+    <meta name="title" content="조선중앙텔레비죤 실시간 방송" />
+    <meta name="description" content="24시간 방송중" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kctv.kro.kr/" />
+    <meta property="og:title" content="조선중앙텔레비죤 실시간 방송" />
+    <meta property="og:description" content="24시간 방송중" />
+    <meta property="og:image" content="https://github.com/newhajinyoon/KCTV/assets/61103309/54650727-1d72-4a1e-a613-bfe13050868d" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://kctv.kro.kr/" />
+    <meta property="twitter:title" content="조선중앙텔레비죤 실시간 방송" />
+    <meta property="twitter:description" content="24시간 방송중" />
+    <meta property="twitter:image" content="https://github.com/newhajinyoon/KCTV/assets/61103309/54650727-1d72-4a1e-a613-bfe13050868d" />
+
+    <!-- Meta Tags Generated with https://metatags.io -->
+    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+    <style>
+        @font-face {
+            font-family: 'ChosunGs';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGs.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'ChosunGs', sans-serif;
+        }
+
+        header {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #fff;
+            margin: 0;
+        }
+
+        video {
+            width: 80%;
+            height: auto;
+            border: 5px solid #990000;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(153, 0, 0, 0.7);
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .credit {
+            font-size: 1em;
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>조선중앙텔레비죤 실시간 방송</h1>
+    </header>
+    <video id="videoPlayer" controls></video>
+    <footer>
+        <div class="credit">Live Stream from Korean Central Television</div>
+        <a href="http://github.com/newhajinyoon" target="_blank">
+깃허브
+        </a>
+    </footer>
+    <script>
+        (function() {
+            var url = "https://tv.nknews.org/tvdash/stream.mpd";
+            var videoPlayer = document.getElementById('videoPlayer');
+            var player = dashjs.MediaPlayer().create();
+            player.initialize(videoPlayer, url, true);
+        })();
+    </script>
+</body>
+</html>
