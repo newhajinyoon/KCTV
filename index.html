@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,6 +43,8 @@
             background-color: #000;
             color: #fff;
             font-family: 'ChosunGs', sans-serif;
+            padding: 10px;
+            box-sizing: border-box;
         }
 
         header {
@@ -50,13 +53,14 @@
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 2em;
             color: #fff;
             margin: 0;
         }
 
         video {
-            width: 80%;
+            width: 100%;
+            max-width: 800px;
             height: auto;
             border: 5px solid #990000;
             border-radius: 10px;
@@ -72,8 +76,38 @@
             font-size: 1em;
             color: #bbb;
         }
+
+        a {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .credit {
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2em;
+            }
+
+            .credit {
+                font-size: 0.8em;
+            }
+        }
     </style>
 </head>
+
 <body>
     <header>
         <h1>조선중앙텔레비죤 실시간 방송</h1>
@@ -81,12 +115,10 @@
     <video id="videoPlayer" controls></video>
     <footer>
         <div class="credit">Live Stream from Korean Central Television</div>
-        <a href="http://github.com/newhajinyoon" target="_blank">
-깃허브
-        </a>
+        <a href="http://github.com/newhajinyoon" target="_blank">깃허브</a>
     </footer>
     <script>
-        (function() {
+        (function () {
             var url = "https://tv.nknews.org/tvdash/stream.mpd";
             var videoPlayer = document.getElementById('videoPlayer');
             var player = dashjs.MediaPlayer().create();
@@ -94,4 +126,5 @@
         })();
     </script>
 </body>
+
 </html>
